@@ -2,7 +2,7 @@
 
 中文 | [English](#english)
 
-把 Windows 系统音频通过 AirPlay / RAOP 推送到 HomePod、HomePod mini 或其他兼容设备。
+把 Windows 系统音频通过 AirPlay / RAOP 推送到 AirPlay兼容设备。已经在Xiaomi Sound上测试通过
 
 本项目基于：
 
@@ -207,7 +207,7 @@ windows_to_airplay/
 
 ## English
 
-Stream Windows system audio to HomePod, HomePod mini, or other compatible AirPlay / RAOP speakers.
+Stream Windows system audio to compatible AirPlay / RAOP speakers. Test passed On Xiaomi Sound
 
 This project is built on:
 
