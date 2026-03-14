@@ -2,13 +2,33 @@ from __future__ import annotations
 
 import asyncio
 from collections import deque
-from dataclasses import dataclass
+from dataclasses import dataclass, field
+from pathlib import Path
+import sys
 from typing import Deque
+
+
+def resolve_ffmpeg_executable(executable: str | None = None) -> str:
+    if executable and executable != "ffmpeg":
+        return executable
+
+    candidates: list[Path] = []
+    if getattr(sys, "frozen", False):
+        candidates.append(Path(sys.executable).resolve().parent / "ffmpeg.exe")
+        meipass = getattr(sys, "_MEIPASS", None)
+        if meipass:
+            candidates.append(Path(meipass) / "ffmpeg.exe")
+
+    for candidate in candidates:
+        if candidate.is_file():
+            return str(candidate)
+
+    return executable or "ffmpeg"
 
 
 @dataclass(frozen=True)
 class EncoderConfig:
-    executable: str = "ffmpeg"
+    executable: str = field(default_factory=resolve_ffmpeg_executable)
     input_rate: int = 48_000
     input_channels: int = 2
     output_channels: int = 2

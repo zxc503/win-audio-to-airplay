@@ -7,7 +7,7 @@ from typing import Any, Callable
 
 from .airplay import apply_raop_password, create_storage, scan_devices
 from .capture import LoopbackDevice, WasapiLoopbackCapture, list_loopback_devices
-from .ffmpeg import EncoderConfig, FfmpegMp3Encoder
+from .ffmpeg import EncoderConfig, FfmpegMp3Encoder, resolve_ffmpeg_executable
 
 EventCallback = Callable[[str], None]
 
@@ -143,7 +143,7 @@ class AudioStreamBackend:
         addresses: list[str],
         *,
         device_index: int | None = None,
-        ffmpeg_path: str = "ffmpeg",
+        ffmpeg_path: str | None = None,
         bitrate: str = "192k",
         frames_per_buffer: int = 512,
         queue_chunks: int = 16,
@@ -166,7 +166,7 @@ class AudioStreamBackend:
                 await self._run_stream(
                     addresses=addresses,
                     device_index=device_index,
-                    ffmpeg_path=ffmpeg_path,
+                    ffmpeg_path=resolve_ffmpeg_executable(ffmpeg_path),
                     bitrate=bitrate,
                     frames_per_buffer=frames_per_buffer,
                     queue_chunks=queue_chunks,
