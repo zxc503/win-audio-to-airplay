@@ -188,14 +188,7 @@ windows_to_airplay/
 - 如果目标设备被别的控制端占用，推流可能失败或中断
 
 ## 排障
-
-1. 确认 Windows 和 HomePod 在同一个局域网
-2. 确认 HomePod 已联网，且允许 AirPlay 访问
-3. 先运行 `win-airplay discover`
-4. 如果提示需要配对，先执行 `win-airplay pair`
-5. 如果提示 `ffmpeg` 找不到，安装 FFmpeg 或用 `--ffmpeg-path` 指定
-6. 如果能连接但没有声音，确认 Windows 当前确实正在播放音频
-7. 如果希望电脑本地静音但 HomePod 继续播，建议改用虚拟声卡
+1. 如果希望电脑本地静音，但 HomePod 继续播，安装一个Steam，将电脑的音频输出设备改为Steam Steaming Speaker
 
 ## License
 
@@ -402,13 +395,7 @@ windows_to_airplay/
 
 ## Troubleshooting
 
-1. Make sure Windows and HomePod are on the same local network
-2. Make sure the HomePod is online and AirPlay access is allowed
-3. Run `win-airplay discover` first
-4. If pairing is required, run `win-airplay pair`
-5. If `ffmpeg` is not found, install it or use `--ffmpeg-path`
-6. If the connection succeeds but there is no sound, confirm Windows is actually playing audio
-7. If you want silent local playback but active HomePod playback, use a virtual audio device instead of muting the current output
+1.If you want to mute the computer locally while still letting the HomePod play audio, install Steam and set the computer’s audio output device to “Steam Streaming Speaker.”
 
 ## License
 
