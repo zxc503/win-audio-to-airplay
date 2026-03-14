@@ -47,14 +47,22 @@
 
 ## 安装
 
-### 1. 创建虚拟环境
+### 方式一：下载预编译版本
+
+如果你想直接使用预编译版本，可以从 [v0.1 release](https://github.com/zxc503/win-audio-to-airplay/releases/tag/v0.1) 下载。
+
+预编译版本不需要安装虚拟环境，也不需要单独安装 FFmpeg。
+
+### 方式二：从源码安装
+
+#### 1. 创建虚拟环境
 
 ```powershell
 python -m pip install --upgrade pip
 python -m pip install -e .
 ```
 
-### 2. 安装 FFmpeg
+#### 2. 安装 FFmpeg
 
 ```powershell
 winget install -e --id Gyan.FFmpeg
@@ -252,14 +260,22 @@ Notes:
 
 ## Installation
 
-### 1. Create a virtual environment
+### Option 1: Download a prebuilt release
+
+If you want a prebuilt package, download it from the [v0.1 release](https://github.com/zxc503/win-audio-to-airplay/releases/tag/v0.1).
+
+The prebuilt release does not require a virtual environment or a separate FFmpeg installation.
+
+### Option 2: Install from source
+
+#### 1. Create a virtual environment
 
 ```powershell
 python -m pip install --upgrade pip
 python -m pip install -e .
 ```
 
-### 2. Install FFmpeg
+#### 2. Install FFmpeg
 
 ```powershell
 winget install -e --id Gyan.FFmpeg
