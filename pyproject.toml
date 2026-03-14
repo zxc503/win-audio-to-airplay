@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "windows-to-airplay"
+version = "0.1.0"
+description = "Stream Windows system audio to a HomePod over AirPlay using PyAudioWPatch and pyatv."
+readme = "README.md"
+requires-python = ">=3.11,<3.14"
+license = { text = "MIT" }
+authors = [{ name = "OpenAI Codex" }]
+dependencies = [
+  "PyAudioWPatch>=0.2.12.7",
+  "pyatv>=0.14.1,<1.0",
+]
+
+[project.scripts]
+win-airplay = "windows_to_airplay.cli:main"
+win-airplay-gui = "windows_to_airplay.gui:main"
+
+[tool.setuptools]
+packages = ["windows_to_airplay"]
